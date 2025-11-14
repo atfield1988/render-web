@@ -86,7 +86,7 @@ def update_application_status(
             raise HTTPException(status_code=404, detail="Application not found")
 
         schedule = application.schedule 
-        db.refresh(schedule, lockmode='update')
+        db.refresh(schedule)
 
         if not schedule:
              raise HTTPException(status_code=404, detail="Schedule not found")

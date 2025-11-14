@@ -1,4 +1,3 @@
-# backend/app/schemas.py
 from pydantic import BaseModel, Field, validator
 from typing import Optional
 from datetime import datetime
@@ -27,7 +26,7 @@ class Schedule(ScheduleBase):
     current_applicants: int
     
     class Config:
-        orm_mode = True
+        from_attributes = True  # 수정됨
 
 class ScheduleWithPendingCount(Schedule):
     pending_applicants: int = 0
@@ -54,7 +53,7 @@ class User(BaseModel):
     created_at: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # 수정됨
 
 # --- Auth Schemas ---
 class Token(BaseModel):
@@ -90,7 +89,7 @@ class Application(ApplicationBase):
     user: Optional[User] = None
     
     class Config:
-        orm_mode = True
+        from_attributes = True  # 수정됨
 
 # --- Admin Schemas ---
 class UserApproval(BaseModel):
@@ -123,4 +122,4 @@ class Notice(NoticeBase):
     view_count: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # 수정됨
