@@ -52,7 +52,9 @@
 - [x] `frontend/src/pages/AdminLogin.js` - Admin login
 - [x] `frontend/src/pages/Register.js` - User registration
 - [x] `frontend/src/pages/ScheduleDetail.js` - Schedule details & apply
-- [x] `frontend/src/pages/NoticeList.js` - Notice board
+- [x] `frontend/src/pages/NoticeList.js` - Notice board list
+- [x] `frontend/src/pages/NoticeDetail.js` - Notice detail view (FIXED ✅)
+- [x] `frontend/src/pages/NoticeDetail.css` - Notice detail styles
 - [x] `frontend/src/pages/AdminDashboard.js` - 3-tab admin panel (ENHANCED ✅)
 - [x] `frontend/src/pages/Mypage.js` - User profile with cancel button
 - [x] `frontend/src/pages/EnhancedMypage.js` - Enhanced version (optional)

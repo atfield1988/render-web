@@ -13,6 +13,7 @@ import Mypage from './pages/Mypage';
 import AdminDashboard from './pages/AdminDashboard';
 import ScheduleDetail from './pages/ScheduleDetail';
 import NoticeList from './pages/NoticeList';
+import NoticeDetail from './pages/NoticeDetail';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/schedules/:id" element={<ScheduleDetail />} />
             <Route path="/notices" element={<NoticeList />} />
+            <Route path="/notices/:id" element={<NoticeDetail />} />
             
             {/* Protected Routes - Require Login */}
             <Route element={<ProtectedRoute />}>
