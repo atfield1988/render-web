@@ -1,10 +1,10 @@
 services:
-  # 백엔드 API 서비스
+  # 백엔드 API 서비스 (수정 없음: plan: free 유지)
   - type: web
     name: parktel-backend
     env: python
-    plan: free
-    region: oregon  # 무료 리전
+    plan: free                 # 백엔드는 무료 플랜 명시 필수
+    region: oregon
     buildCommand: cd backend && pip install -r requirements.txt
     startCommand: cd backend && alembic upgrade head && python -m app.init_db && uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
@@ -24,11 +24,11 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.0
 
-  # 프론트엔드 정적 사이트
+  # 프론트엔드 정적 사이트 (수정됨: plan: free 삭제)
   - type: web
     name: parktel-frontend
     env: static
-    plan: free
+    # plan: free  <-- 이 줄을 삭제했습니다. (정적 사이트는 기본 무료)
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/build
     routes:
